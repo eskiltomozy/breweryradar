@@ -1,0 +1,10 @@
+<div class="booyah-box col-10 offset-1">
+  <h1>Edit a Brewery</h1>
+  <br />
+  <%= simple_form_for @place do |f| %>
+    <%= f.input :name, required: true, label: false, placeholder: 'Name' %>
+    <%= f.input :address, required: true, label: false, placeholder: 'Address' %>
+    <%= f.input :description, required: true, label: false, placeholder: 'Description' %>
+    <%= f.submit 'Submit', class: 'btn btn-primary' %>
+  <% end %>
+</div>
