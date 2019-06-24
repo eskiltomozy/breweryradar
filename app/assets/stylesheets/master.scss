@@ -18,9 +18,9 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-inverse .navbar-brand {
   color: #cc0000;
   font-family: 'gondola_sdregular', serif;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bolder;
-  line-height: 30px;
+  line-height: 40px;
   padding: 10px 0px 0px 0px;
   text-shadow: 0px 8px 2px #000000;
 }
@@ -30,7 +30,91 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0px 2px 8px 0 #cccccc;
   background: #fff;
   border: none;
-  margin-top: 10px;
-  margin-bottom: 15px;
   padding: 20px;
+}
+
+.col-10 {
+  margin-top: 10px;
+}
+.digg_pagination {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 30px;
+  text-align: center;
+  background: white;
+  cursor: default;
+  /* self-clearing method: */
+}
+.digg_pagination a, .digg_pagination span, .digg_pagination em {
+  display: block;
+  min-width: 30px;
+  height: 30px;
+  padding: 0px 10px 0px 10px;
+  margin: 0px 5px 0px 5px;
+}
+.digg_pagination .disabled {
+  background: white;
+  color: #999999;
+  -moz-box-shadow: 0px 2px 8px 0 #cccccc;
+  -webkit-box-shadow: 0px 2px 8px 0 #cccccc;
+  box-shadow: 0px 2px 8px 0 #cccccc;
+}
+.digg_pagination .current {
+  font-style: normal;
+  background: #cc0000;
+  color: white;
+  -moz-box-shadow: 0px 2px 8px 0 #cccccc;
+  -webkit-box-shadow: 0px 2px 8px 0 #cccccc;
+  box-shadow: 0px 2px 8px 0 #cccccc;
+}
+.digg_pagination a {
+  text-decoration: none;
+  color: #cc0000;
+  -moz-box-shadow: 0px 2px 8px 0 #cccccc;
+  -webkit-box-shadow: 0px 2px 8px 0 #cccccc;
+  box-shadow: 0px 2px 8px 0 #cccccc;
+}
+.digg_pagination a:hover, .digg_pagination a:focus {
+  background: #cc0000;
+  color: white;
+}
+.digg_pagination .page_info {
+  background: #cc0000;
+  color: white;
+  padding: 0.4em 0.6em;
+  width: 22em;
+  margin-bottom: 0.3em;
+  text-align: center;
+}
+.digg_pagination .page_info b {
+  color: #cc0000;
+  background: #6aa6ed;
+  padding: 0.1em 0.25em;
+}
+.digg_pagination:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+* html .digg_pagination {
+  height: 1%;
+}
+*:first-child + html .digg_pagination {
+  overflow: hidden;
+}
+.pagination {
+  display: inline-flex;
+}
+.digg_pagination a.previous_page, .digg_pagination span.previous_page {
+  position: absolute;
+  left: 0px;
+  margin: 0px 5px 0px 0px;
+}
+.digg_pagination a.next_page, .digg_pagination span.next_page {
+  position: absolute;
+  right: 0px;
+  margin: 0px 0px 0px 5px;
 }
