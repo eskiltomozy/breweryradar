@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 @import url('https://fonts.googleapis.com/css?family=Raleway|Yesteryear&display=swap');
 
 body {
@@ -8,6 +9,15 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin:0;
   padding:0;
+}
+.add {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+}
+.add:hover {
+  color: white;
 }
 .navbar {
   background: image_url('cartography.png') fixed;
