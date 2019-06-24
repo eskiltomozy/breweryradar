@@ -1,8 +1,9 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Raleway|Yesteryear&display=swap');
 
 body {
   background: image_url('topography.png') fixed;
-  font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  font-family: 'Raleway', sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
   margin:0;
@@ -10,9 +11,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 .navbar {
   background: image_url('cartography.png') fixed;
-  -moz-box-shadow: 0px 2px 8px 0 #cccccc;
-  -webkit-box-shadow: 0px 2px 8px 0 #cccccc;
-  box-shadow: 0px 2px 8px 0 #cccccc;
+  -moz-box-shadow: 0px 2px 8px 0 #999999;
+  -webkit-box-shadow: 0px 2px 8px 0 #999999;
+  box-shadow: 0px 2px 8px 0 #999999;
+}
+.navbar-inverse .navbar-brand {
+  color: #cc0000;
+  font-family: 'gondola_sdregular', serif;
+  font-size: 30px;
+  font-weight: bolder;
+  line-height: 30px;
+  padding: 10px 0px 0px 0px;
+  text-shadow: 0px 8px 2px #000000;
 }
 .booyah-box {
   -moz-box-shadow: 0px 2px 8px 0 #cccccc;
