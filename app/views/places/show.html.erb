@@ -3,7 +3,7 @@
 <!-- Show place -->
   <h1><%= @place.name %></h1>
   <i><%= @place.address %></i><br /><br />
-  <p><%= @place.description %></p>
+  <p><%= @place.description %></p> 
 
 <!-- Geocoding map -->
   <% if @place.latitude.present? && @place.longitude.present? %>
@@ -68,15 +68,15 @@
 </div>
 
 <!-- Comments -->
-<div class="margin-bottom">
+<div>
   <% @place.comments.each do |comment| %>
     <div class="booyah-box col-10 col-sm-5 offset-1 float-left">
-      <h1><small>User#<%= comment.user_id %></small></h1>
       <blockquote>
-        <% if comment.humanized_rating.present? %>
+        User#<%= comment.user_id %> -        
+        <% if comment.humanized_rating.present? %>          
           <b><%= comment.humanized_rating %></b> -
         <% end %>
-        <%= comment.message %>      
+        <%= comment.message %>
       </blockquote>  
     </div>
   <% end %>
