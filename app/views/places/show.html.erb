@@ -1,20 +1,21 @@
 <div class="booyah-box col-10 offset-1">
+
+<!-- Show place -->
+
   <h1><%= @place.name %></h1>
   <i><%= @place.address %></i><br /><br />
   <p><%= @place.description %></p>
 
+<!-- Geocoding map -->
+
   <% if @place.latitude.present? && @place.longitude.present? %>
-
     <script>
-
       function initMap() {
         var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
-
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 16,
           center: myLatLng
         });
-
         var marker = new google.maps.Marker({
           position: myLatLng,
           map: map,
@@ -26,16 +27,20 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyQ6gevbQA1hYR1d9Kz4nn7J1Q710Tf4I&callback=initMap">
     </script>
     <div id="map"></div>
-
   <% end %>
 
   <br />
   <br />
+
+<!-- Check User Login -->
 
   <% if current_user && current_user == @place.user %>
     <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary float-right' %>
   <% end %>
 </div>
+
+<!-- Add Comment -->
+
 <div class="booyah-box col-10 offset-1">
   <h1>Add a Comment</h1>
   <br />
@@ -43,5 +48,19 @@
     <%= f.input :message %>
     <%= f.input :rating %>
     <%= f.submit 'Enter', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+<!-- Comments -->
+
+<div class="booyah-box col-10 offset-1">
+  <h1>Comments</h1>
+  <br />
+  <%= @place.comments.each do |comment| %>
+    <blockquote>
+      <b><%= comment.rating %></b>
+      <%= comment.message %>
+      <small><%= comment.user.email %></small>
+    </blockquote>
   <% end %>
 </div>
