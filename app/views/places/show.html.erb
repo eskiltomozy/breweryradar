@@ -22,7 +22,7 @@
       }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyQ6gevbQA1hYR1d9Kz4nn7J1Q710Tf4I&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
     </script>
     <div id="map"></div>
   <% end %>
@@ -34,7 +34,7 @@
     Add a comment
   </button>
 
-<!-- Check User Login -->
+<!-- Check user login -->
   <% if current_user && current_user == @place.user %>
     <%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary float-right' %>
   <% end %>
@@ -52,11 +52,20 @@
         <h4 class="modal-title" id="myModalLabel">Add a comment</h4>
       </div>
 
-<!-- Add Comment -->
+<!-- Add comment -->
       <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
         <div class="modal-body">
           <%= f.input :message %>
           <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit 'Enter', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+      <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+        <div class="modal-body">
+          <%= f.input :picture %>
+          <%= f.input :caption, label: false, placeholder: 'caption', input_html: { maxlength: 23} %>
         </div>
         <div class="modal-footer">
           <%= f.submit 'Enter', class: 'btn btn-primary' %>
@@ -68,7 +77,7 @@
 </div>
 
 <!-- Comments -->
-<div>
+<div class="user-comment">
   <% @place.comments.each do |comment| %>
     <div class="booyah-box col-10 col-sm-5 offset-1 float-left">
       <blockquote>
@@ -77,7 +86,17 @@
           <b><%= comment.humanized_rating %></b> -
         <% end %>
         <%= comment.message %>
-      </blockquote>  
+      </blockquote>
+      <% @place.photos.each do |photo| %>
+        <div class="user-img-box">
+          <div class="user-img" style="background-image: url(<%= photo.picture.url %>);">
+            <%= image_tag("clear.png") %>            
+          </div>
+          <blockquote class="user-caption">
+            <%= photo.caption %>              
+          </blockquote>
+        </div>
+      <% end %>  
     </div>
   <% end %>
 </div>

@@ -1,32 +1,53 @@
+<!-- Pagination -->
 <div class="col-10 offset-1">
   <div class="digg_pagination">
     <%= will_paginate @places %>
   </div>
 </div>
+
+<!-- Place -->
 <% @places.each do |place| %>
-<div class="booyah-box col-10 offset-1">
-  <h1><%= link_to place.name, place_path(place) %></h1>
-  <i><%= place.address %></i>
-  <br />
-  <br />
-  <p><%= place.description %></p>
-  <% if place.user.present? %>
-    <small><b>User#<%= place.user_id %></b></small>
-  <% end %>
-  <br />
-  <br />
-<!-- Last Comment -->  
-  <% if place.comments.present? %>
-    <blockquote>
-      User#<%= place.comments.last.user_id %> -
-      <% if place.comments.last.humanized_rating.present? %>
-        <b><%= place.comments.last.humanized_rating %></b> -
-      <% end %>
-      <%= place.comments.last.message %>
-    </blockquote>
-  <% end %>
-</div>
+  <div class="booyah-box col-10 offset-1">
+    <div class="percent-flex">
+      <div>
+        <h1><%= link_to place.name, place_path(place) %></h1>
+        <i><%= place.address %></i>
+        <br />
+        <br />
+        <p><%= place.description %></p>
+        <% if place.user.present? %>
+          <small><b>User#<%= place.user_id %></b></small>
+        <% end %>
+      </div>
+
+<!-- Last comment -->
+      <div> 
+        <% if place.comments.present? %>
+          <blockquote>
+            User#<%= place.comments.last.user_id %> -        
+            <% if place.comments.last.humanized_rating.present? %>        
+              <b><%= place.comments.last.humanized_rating %></b>
+            <% end %>
+          </blockquote>
+          <div class="user-img-box-last">
+            <div class="user-img" style="background-image: url(<%= place.photos.last.picture.url %>);">
+              <%= image_tag("clear.png") %>            
+            </div>            
+          </div>
+          <blockquote>
+            <%= place.photos.last.caption %>              
+          </blockquote>
+        <% end %>
+      </div>
+    </div>
+  </div>
 <% end %>
 
+<!-- Pagination -->
+<div class="col-10 offset-1">
+  <div class="digg_pagination">
+    <%= will_paginate @places %>
+  </div>
+</div>
 
 

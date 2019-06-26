@@ -2,6 +2,8 @@
 @import "font-awesome";
 @import url('https://fonts.googleapis.com/css?family=Raleway|Yesteryear&display=swap');
 
+/* html tags */
+
 body {
   background: image_url('topography.png') fixed;
   font-family: 'Raleway', sans-serif;
@@ -18,36 +20,47 @@ a:hover {
   font-weight: bolder;
   text-decoration: none;
 }
+
+/* grid */
+
 .col-10 {
   flex: 0 0 96%;
   max-width: 96%;
   margin-top: 2%;
 }
+.percent-flex {
+  width: 100%;
+  display: flex;
+}
+.percent-flex div:nth-of-type(1) {
+  flex-grow: 8;
+}
+.percent-flex div:nth-of-type(2) {
+  flex-grow: 2;
+}
 .col-sm-5 {
   flex: 0 0 22.5%;
   max-width: 22.5%;
 }
-@media (max-width: 2880px) {
-  .col-sm-5 {
-    flex: 0 0 30.66666666666667%;
-    max-width: 30.66666666666667%;
-  }
-}
-@media (max-width: 1920px) {
-  .col-sm-5 {
-    flex: 0 0 47%;
-    max-width: 47%;
-  }
-}
-@media (max-width: 960px) {
-  .col-sm-5 {
-    flex: 0 0 96%;
-    max-width: 96%;
-  }
-}
 .offset-1 {
   margin-left: 2%;
 }
+.float-right {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+.booyah-box {
+  -moz-box-shadow: 0px 2px 8px 0 #cccccc;
+  -webkit-box-shadow: 0px 2px 8px 0 #cccccc;
+  box-shadow: 0px 2px 8px 0 #cccccc;
+  background: #fff;
+  border: none;
+  padding: 2%;
+}
+
+/* nav */
+
 .navbar-inverse .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.5);
   font-family: 'Raleway', sans-serif;
@@ -73,14 +86,8 @@ a:hover {
   padding: 10px 0px 0px 0px;
   text-shadow: 0px 8px 2px #000000;
 }
-.booyah-box {
-  -moz-box-shadow: 0px 2px 8px 0 #cccccc;
-  -webkit-box-shadow: 0px 2px 8px 0 #cccccc;
-  box-shadow: 0px 2px 8px 0 #cccccc;
-  background: #fff;
-  border: none;
-  padding: 20px;
-}
+
+/* pagination */
 
 .digg_pagination {
   font-size: 15px;
@@ -165,6 +172,8 @@ a:hover {
   margin: 0px 0px 0px 5px;
 }
 
+/* input button */
+
 .btn {
   border: 1px solid rgba(0, 0, 0, 0.15);
   color: #cc0000;
@@ -181,41 +190,74 @@ a:hover {
   background-color: #cc0000;
   text-shadow: 0px 5px 5px rgba(0, 0, 0, .5);
 }
-.float-right {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-}
 .invalid-feedback {
   color: #ff3333;
   background-color: #FFEEEE;
   border-radius: 3px;
   padding: 2px 8px 2px 8px;
 }
-#map {
-  height: 300px;
-}
+
+/* comment */
+
 blockquote {
-  background: #f2f2f2;
+  background-color: #f2f2f2;
   border-left: 10px solid #cccccc;
   margin:0px;
+  height: 2em;
   padding: 0.5em;
-  quotes: "\201C""\201D""\2018""\2019";
-  -moz-box-shadow: inset 0px 2px 4px 0 #cccccc;
-  -webkit-box-shadow: inset 0px 2px 4px 0 #cccccc;
-  box-shadow: inset 0px 2px 4px 0 #cccccc;
-}
-blockquote:before {
-  color: #cccccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.2em;
-  vertical-align: -0.4em;
+  font-size: 0.75em;
+  line-height: 1em;
+  white-space: nowrap;
+  overflow: hidden;
 }
 blockquote p {
   display: inline;
 }
-small, span {
-  float: right;
+.user-img-box {  
+  float: left;
+  width: 33.333%;
+  height: 33.333%;
+}
+.user-img, .user-img img {
+  background-size: cover;
+  width: 100%;
+}
+.user-img-box-last {  
+  width: 100%;
+}
+
+/* @media */
+
+@media (max-width: 2880px) {
+  .col-sm-5 {
+    flex: 0 0 30.66666666666667%;
+    max-width: 30.66666666666667%;
+  }
+  blockquote {
+    font-size: 1em;
+  }
+}
+@media (max-width: 1920px) {
+  .col-sm-5 {
+    flex: 0 0 47%;
+    max-width: 47%;
+  }
+  blockquote {
+    font-size: 0.75em;
+  }
+}
+@media (max-width: 960px) {
+  .col-sm-5 {
+    flex: 0 0 96%;
+    max-width: 96%;
+  }
+  blockquote {
+    font-size: 1em;
+  }
+}
+
+/* google map */
+
+#map {
+  height: 300px;
 }
