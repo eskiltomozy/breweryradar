@@ -7,6 +7,7 @@
 body {
   background: image_url('topography.png') fixed;
   font-family: 'Raleway', sans-serif;
+  overflow-y: scroll;
 }
 h1, h2, h3, h4, h5, h6 {
   margin:0;
@@ -190,6 +191,20 @@ a:hover {
   background-color: #cc0000;
   text-shadow: 0px 5px 5px rgba(0, 0, 0, .5);
 }
+.form-control, .form-control-file {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: black;
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
 .invalid-feedback {
   color: #ff3333;
   background-color: #FFEEEE;
@@ -215,8 +230,7 @@ blockquote p {
 }
 .user-img-box {  
   float: left;
-  width: 33.333%;
-  height: 33.333%;
+  width: 100%;
 }
 .user-img, .user-img img {
   background-size: cover;

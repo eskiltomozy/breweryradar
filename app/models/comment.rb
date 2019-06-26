@@ -2,6 +2,8 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :place
 
+  mount_uploader :picture, PictureUploader
+
   RATINGS = {
     'one star': '1_star',
     'two stars': '2_star',

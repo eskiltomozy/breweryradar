@@ -30,12 +30,12 @@
             <% end %>
           </blockquote>
           <div class="user-img-box-last">
-            <div class="user-img" style="background-image: url(<%= place.photos.last.picture.url %>);">
+            <div class="user-img" style="background-image: url(<%= place.comments.last.picture.url %>);">
               <%= image_tag("clear.png") %>            
             </div>            
           </div>
           <blockquote>
-            <%= place.photos.last.caption %>              
+            <%= place.comments.last.caption %>              
           </blockquote>
         <% end %>
       </div>

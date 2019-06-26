@@ -55,16 +55,9 @@
  <!-- Add comment --> 
       <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>  
         <div class="modal-body">  
-          <%= f.input :message %> 
-          <%= f.input :rating, as: :select, collection: Comment::RATINGS %> 
-        </div>  
-        <div class="modal-footer">  
-          <%= f.submit 'Enter', class: 'btn btn-primary' %> 
-        </div>  
-      <% end %> 
-      <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>  
-        <div class="modal-body">  
-          <%= f.input :picture %> 
+          <%= f.input :message, label: false, placeholder: 'message', input_html: { maxlength: 23} %> 
+          <%= f.input :rating, label: false, as: :select, collection: Comment::RATINGS, prompt: "Select rating" %>
+          <%= f.input :picture, label: false %> 
           <%= f.input :caption, label: false, placeholder: 'caption', input_html: { maxlength: 23} %> 
         </div>  
         <div class="modal-footer">  
@@ -87,16 +80,14 @@
         <% end %> 
         <%= comment.message %>  
       </blockquote> 
-      <% @place.photos.each do |photo| %> 
-        <div class="user-img-box">  
-          <div class="user-img" style="background-image: url(<%= photo.picture.url %>);"> 
-            <%= image_tag("clear.png") %>             
-          </div>  
-          <blockquote class="user-caption"> 
-            <%= photo.caption %>                
-          </blockquote> 
+      <div class="user-img-box">  
+        <div class="user-img" style="background-image: url(<%= comment.picture.url %>);"> 
+          <%= image_tag("clear.png") %>             
         </div>  
-      <% end %>   
+        <blockquote class="user-caption"> 
+          <%= comment.caption %>                
+        </blockquote> 
+      </div>   
     </div>  
   <% end %> 
 </div>
