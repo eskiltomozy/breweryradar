@@ -5,11 +5,11 @@ class Comment < ApplicationRecord
   mount_uploader :picture, PictureUploader
 
   RATINGS = {
-    'one star': '1_star',
-    'two stars': '2_star',
-    'three stars': '3_star',
-    'four stars': '4_star',
-    'five stars': '5_star'
+    '☻': '1_star',
+    '☻☻': '2_star',
+    '☻☻☻': '3_star',
+    '☻☻☻☻': '4_star',
+    '☻☻☻☻☻': '5_star'
   }
 
   def humanized_rating

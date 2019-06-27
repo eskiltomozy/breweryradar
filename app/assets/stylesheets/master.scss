@@ -220,7 +220,7 @@ blockquote {
   margin:0px;
   height: 2em;
   padding: 0.5em;
-  font-size: 0.75em;
+  font-size: 1em;
   line-height: 1em;
   white-space: nowrap;
   overflow: hidden;
@@ -239,6 +239,10 @@ blockquote p {
 .user-img-box-last {  
   width: 100%;
 }
+.stars {
+  color: #cc0000;
+  vertical-align: middle;
+}
 
 /* @media */
 
@@ -247,26 +251,17 @@ blockquote p {
     flex: 0 0 30.66666666666667%;
     max-width: 30.66666666666667%;
   }
-  blockquote {
-    font-size: 1em;
-  }
 }
 @media (max-width: 1920px) {
   .col-sm-5 {
     flex: 0 0 47%;
     max-width: 47%;
   }
-  blockquote {
-    font-size: 0.75em;
-  }
 }
 @media (max-width: 960px) {
   .col-sm-5 {
     flex: 0 0 96%;
     max-width: 96%;
-  }
-  blockquote {
-    font-size: 1em;
   }
 }
 
