@@ -1,6 +1,6 @@
+<!-- User info -->
 <div class="booyah-box col-10 offset-1">
   <div class="percent-flex">
-
     <div>
       <h1><%= @user.email %></h1>
       <br />
@@ -13,6 +13,37 @@
     <div>
       <div class="user_pic"><%= image_tag 'user.png' %></div>
     </div>
-
   </div>
 </div>
+
+<!-- Comments -->
+<div class="full-width">
+  <div class="booyah-box col-10 offset-1">
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#comments">Comments</button>
+  </div>
+</div>
+
+<div id="comments" class="user-comment collapse in">  
+  <% @user.comments.each do |comment| %> 
+    <div class="booyah-box col-10 col-sm-5 offset-1 float-left">
+      <%= link_to comment.place.name, place_path(comment.place) %>
+      <blockquote>  
+        User#<%= comment.user_id %> -         
+        <% if comment.humanized_rating.present? %>            
+          <span class="stars"><%= comment.humanized_rating %></span> -  
+        <% end %> 
+        <%= comment.caption %>  
+      </blockquote>
+      <div class="user-img-box">  
+        <div class="user-img" style="background-image: url(<%= comment.picture.url %>);"> 
+          <%= image_tag("clear.png") %>             
+        </div>  
+        <blockquote class="user-caption"> 
+          <%= comment.message %>                
+        </blockquote> 
+      </div>   
+    </div>  
+  <% end %> 
+</div>
+
+

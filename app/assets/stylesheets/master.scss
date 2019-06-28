@@ -68,6 +68,14 @@ button:focus {
   border: none;
   padding: 2%;
 }
+.full-width {
+  width: 100%;
+  clear: both;
+  padding-top: 2%;
+}
+.full-width .booyah-box {
+  margin-top: 0%;
+}
 
 /* modal */
 
