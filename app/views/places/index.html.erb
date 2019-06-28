@@ -62,7 +62,7 @@
           <blockquote>
             User#<%= place.comments.last.user_id %> -        
             <% if place.comments.last.humanized_rating.present? %>        
-              <b><%= place.comments.last.humanized_rating %></b>
+              <b class="stars"><%= place.comments.last.humanized_rating %></b>
             <% end %>
           </blockquote>
           <div class="user-img-box-last">

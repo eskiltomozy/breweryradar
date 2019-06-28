@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :places do
     resources :comments, :photos, only: :create
   end
+  resources :users, only: :show
 end
