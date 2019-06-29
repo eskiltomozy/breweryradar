@@ -10,7 +10,12 @@ body {
   overflow-y: scroll;
   padding-top: 66px;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin:0;
   padding:0;
   font-weight: bolder;
@@ -35,7 +40,6 @@ button:focus {
 .col-10 {
   flex: 0 0 96%;
   max-width: 96%;
-  margin-top: 2%;
 }
 .percent-flex {
   width: 100%;
@@ -55,26 +59,21 @@ button:focus {
 .offset-1 {
   margin-left: 2%;
 }
-.float-right {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-}
 .booyah-box {
   -moz-box-shadow: 0em 0.2em 0.3em #ccc;
   -webkit-box-shadow: 0em 0.2em 0.3em #ccc;
   box-shadow: 0em 0.2em 0.3em #ccc;
   background: #fff;
   border: none;
+  margin-top: 2%;
   padding: 2%;
 }
-.full-width {
+.clear {
   width: 100%;
   clear: both;
-  padding-top: 2%;
 }
-.full-width .booyah-box {
-  margin-top: 0%;
+.percent-2 {
+    padding-top: 2%;
 }
 
 /* modal */
@@ -82,7 +81,8 @@ button:focus {
 .modal-body {
   padding: 0px 15px;
 }
-.modal-header, .modal-footer {
+.modal-header,
+.modal-footer {
   border: none;
 }
 .modal-footer {
@@ -143,16 +143,18 @@ button:focus {
 /* pagination */
 
 .digg_pagination {
+  margin-top: 2%;
   font-size: 15px;
   font-style: normal;
   font-weight: bold;
   line-height: 30px;
   text-align: center;
-  background: #fff;
   cursor: default;
   /* self-clearing method: */
 }
-.digg_pagination a, .digg_pagination span, .digg_pagination em {
+.digg_pagination a,
+.digg_pagination span,
+.digg_pagination em {
   display: block;
   min-width: 30px;
   height: 30px;
@@ -176,12 +178,14 @@ button:focus {
 }
 .digg_pagination a {
   text-decoration: none;
+  background: #fff;
   color: #c00;
   -moz-box-shadow: 0em 0.2em 0.3em #ccc;
   -webkit-box-shadow: 0em 0.2em 0.3em #ccc;
   box-shadow: 0em 0.2em 0.3em #ccc;
 }
-.digg_pagination a:hover, .digg_pagination a:focus {
+.digg_pagination a:hover,
+.digg_pagination a:focus {
   background: #c00;
   color: #fff;
 }
@@ -214,12 +218,15 @@ button:focus {
 .pagination {
   display: inline-flex;
 }
-.digg_pagination a.previous_page, .digg_pagination span.previous_page {
+.digg_pagination a.previous_page,
+.digg_pagination span.previous_page {
   position: absolute;
   left: 0px;
   margin: 0px 5px 0px 0px;
+  background: #fff;
 }
-.digg_pagination a.next_page, .digg_pagination span.next_page {
+.digg_pagination a.next_page,
+.digg_pagination span.next_page {
   position: absolute;
   right: 0px;
   margin: 0px 0px 0px 5px;
@@ -248,7 +255,8 @@ button:focus {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.form-control, .form-control-file {
+.form-control,
+.form-control-file {
   display: block;
   width: 100%;
   padding: 0.5rem 0.75rem;
@@ -289,7 +297,13 @@ blockquote p {
   float: left;
   width: 100%;
 }
-.user-img, .user-img img {
+.center {  
+  width: 100%;
+  text-align: center;
+  line-height: 2.5em;
+}
+.user-img,
+.user-img img {
   background-size: cover;
   width: 100%;
 }
@@ -322,15 +336,10 @@ blockquote p {
   }
 }
 
-/* google map */
-
-#map {
-  height: 300px;
-}
-
 /* image carousel */
 
-.carousel-inner > .carousel-item > img, .carousel-inner > .carousel-item > a > img {
+.carousel-inner > .carousel-item > img,
+.carousel-inner > .carousel-item > a > img {
   height: 400px;
   width: 100%;
 }
@@ -353,6 +362,11 @@ blockquote p {
   background-size: cover;
 }
 
+/* miscellaneous */
+
+#map {
+  height: 300px;
+}
 .user_pic img {
   width: 100%;
 }

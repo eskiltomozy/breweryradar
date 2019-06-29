@@ -2,7 +2,7 @@
 <div class="booyah-box col-10 offset-1">
   <div class="percent-flex">
     <div>
-      <h1><%= @user.email %></h1>
+      <h4><%= @user.email %></h4>
       <br />
       <p>
         Member Since: <%= @user.created_at.strftime("%B %d, %Y") %><br />
@@ -26,7 +26,6 @@
 <div id="comments" class="user-comment collapse in">  
   <% @user.comments.each do |comment| %> 
     <div class="booyah-box col-10 col-sm-5 offset-1 float-left">
-      <%= link_to comment.place.name, place_path(comment.place) %>
       <blockquote>  
         User#<%= comment.user_id %> -         
         <% if comment.humanized_rating.present? %>            
@@ -40,10 +39,40 @@
         </div>  
         <blockquote class="user-caption"> 
           <%= comment.message %>                
-        </blockquote> 
-      </div>   
+        </blockquote>
+        <div class="percent-2"></div>
+        <div class="center">
+          <%= link_to 'Edit', edit_place_comment_path(comment), class: 'btn btn-primary float-left' %>
+          <%= link_to comment.place.name, place_path(comment.place) %>
+          <%= link_to 'Delete', place_comment_path(comment), method: :delete, data: {confirm: 'Are you sure you want to delete is entry?'}, class: 'btn btn-primary float-right' %>
+        </div>          
+      </div>
+        
     </div>  
   <% end %> 
 </div>
 
+<div class="clear"></div>
 
+<!-- Breweries -->
+
+<div class="booyah-box col-10 offset-1">
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#breweries">Breweries</button>
+</div>
+
+<div id="breweries" class="user-comment collapse">  
+  <% @user.places.each do |place| %> 
+    <div class="booyah-box col-10 offset-1 float-left">
+      <h1><%= link_to place.name, place_path(place) %></h1>
+      <i><%= place.address %></i>
+      <br />
+      <br />
+      <p><%= place.description %></p>
+      <% if place.user.present? %>
+        <small><b>User#<%= place.user_id %></b></small>
+      <% end %>
+      <%= link_to 'Edit', edit_place_path(place), class: 'btn btn-primary' %>
+      <%= link_to 'Delete', place_path(place), method: :delete, data: {confirm: 'Are you sure you want to delete is entry?'},  class: 'btn btn-primary float-right' %>
+    </div>
+  <% end %> 
+</div>

@@ -1,3 +1,4 @@
+<!-- Carousel -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -34,6 +35,8 @@
   </a>
 </div>
 
+<div class="clear"></div>
+
 <!-- Pagination -->
 <div class="col-10 offset-1">
   <div class="digg_pagination">
@@ -43,6 +46,7 @@
 
 <!-- Place -->
 <% @places.each do |place| %>
+
   <div class="booyah-box col-10 offset-1">
     <div class="percent-flex">
       <div>
@@ -79,11 +83,15 @@
   </div>
 <% end %>
 
+<div class="clear"></div>
+
 <!-- Pagination -->
 <div class="col-10 offset-1">
   <div class="digg_pagination">
     <%= will_paginate @places %>
   </div>
 </div>
+
+<div class="clear"></div>
 
 

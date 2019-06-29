@@ -1,0 +1,12 @@
+<div class="booyah-box col-10 offset-1">
+  <h1>Edit a Comment</h1>
+  <br />
+  <%= simple_form_for ([@place, @comment]) do |f| %>
+    <%= f.input :message, label: false, placeholder: 'message', input_html: { maxlength: 50} %> 
+    <%= f.input :rating, label: false, as: :select, collection: Comment::RATINGS, prompt: "Select rating" %>
+    <%= f.input :picture, label: false %> 
+    <%= f.input :caption, label: false, placeholder: 'caption', input_html: { maxlength: 30} %>
+    <%= f.submit 'Update', class: 'btn btn-primary' %>
+    <%= link_to 'Delete', place_comment_path(@comment), method: :delete, data: {confirm: 'Are you sure you want to delete is entry?'}, class: 'btn btn-primary float-right' %>
+  <% end %>
+</div>
