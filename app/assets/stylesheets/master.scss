@@ -92,12 +92,12 @@ button:focus {
 /* nav */
 
 .navbar-inverse .navbar-toggler-icon {
-    background-image: url(hamburger_up.png);
+    background: image_url('hamburger_up.png');
     width: 40px;
     height: 40px;
 }
 .navbar-inverse:hover .navbar-toggler-icon:hover {
-    background-image: url(hamburger_down.png);
+    background: image_url('hamburger_down.png');
     width: 40px;
     height: 40px;
 }
