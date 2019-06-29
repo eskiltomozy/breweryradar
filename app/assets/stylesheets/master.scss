@@ -219,17 +219,19 @@ button:focus {
   display: inline-flex;
 }
 .digg_pagination a.previous_page,
-.digg_pagination span.previous_page {
-  position: absolute;
-  left: 0px;
-  margin: 0px 5px 0px 0px;
-  background: #fff;
-}
+.digg_pagination span.previous_page,
 .digg_pagination a.next_page,
 .digg_pagination span.next_page {
   position: absolute;
-  right: 0px;
   margin: 0px 0px 0px 5px;
+}
+.digg_pagination a.previous_page,
+.digg_pagination span.previous_page {
+  left: 0px;
+}
+.digg_pagination a.next_page,
+.digg_pagination span.next_page {
+  right: 0px;
 }
 
 /* input button */
