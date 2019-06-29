@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
   def edit
     @place = Place.find(params[:place_id])
     @comment = Comment.find(params[:place_id])
-    if @place.user != current_user
+    if @comment.user != current_user
       return render plain: 'Not allowed', status: :forbidden
     end
   end
