@@ -365,6 +365,8 @@ blockquote p {
 /* miscellaneous */
 
 #map {
+  background: image_url('google_map.png') center fixed;
+  width: 100%;
   height: 300px;
 }
 .user_pic img {
