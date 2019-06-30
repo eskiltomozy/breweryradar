@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+  before_action :authenticate_user!
+
 
   def create
     @place = Place.find(params[:place_id])
@@ -8,22 +9,20 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @place = Place.find(params[:place_id])
-    @comment = Comment.find(params[:place_id])
+    @comment = Comment.find(params[:id])
     if @comment.user != current_user
       return render plain: 'Not allowed', status: :forbidden
     end
   end
   
   def update
-    @place = Place.find(params[:place_id])
-    @comment = Comment.find(params[:place_id])
+    @comment = Comment.find(params[:id])
     if @comment.user != current_user
       return render plain: 'Not allowed', status: :forbidden
     end
     @comment.update_attributes(comment_params)
     if @comment.valid?
-      redirect_to user_path
+      redirect_to user_path(current_user)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -35,7 +34,7 @@ class CommentsController < ApplicationController
       return render plain: 'Not allowed', status: :forbidden
     end
     @comment.destroy
-    redirect_to user_path
+    redirect_to user_path(current_user)
   end
 
   private

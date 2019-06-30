@@ -3,7 +3,8 @@
  <!-- Show place -->  
   <h1><%= @place.name %></h1> 
   <i><%= @place.address %></i><br /><br />  
-  <p><%= @place.description %></p>  
+  <p><%= @place.description %><br />
+  <small><b>User#<%= @place.user_id %></b></small></p>
 
  <!-- Geocoding map --> 
   <% if @place.latitude.present? && @place.longitude.present? %>  
@@ -53,7 +54,7 @@
 <!-- Add comment --> 
       <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>  
         <div class="modal-body">  
-          <%= f.input :message, label: false, placeholder: 'message', input_html: { maxlength: 40} %> 
+          <%= f.input :message, label: false, placeholder: 'message' %> 
           <%= f.input :rating, label: false, as: :select, collection: Comment::RATINGS, prompt: "Select rating" %>
 
 <!-- Add picture --> 
@@ -64,7 +65,7 @@
             <h4 class="modal-title" id="myModalLabel">Add a picture</h4>
           </div>
           <%= f.input :picture, label: false %> 
-          <%= f.input :caption, label: false, placeholder: 'caption', input_html: { maxlength: 25} %> 
+          <%= f.input :caption, label: false, placeholder: 'caption' %> 
         </div>  
         <div class="modal-footer">  
           <%= f.submit 'Enter', class: 'btn btn-primary' %> 
